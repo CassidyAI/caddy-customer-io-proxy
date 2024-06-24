@@ -30,4 +30,8 @@
     reverse_proxy https://track.customer.io {
         header_up Host cu-email.cassidyai.com
     }
+
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    }
 }
