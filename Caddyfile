@@ -26,12 +26,12 @@
     # header @allowedOrigin Access-Control-Allow-Methods "GET, POST, OPTIONS"
     # header @allowedOrigin Access-Control-Allow-Headers "*"
 
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    }
+
     # Reverse proxy configuration for Customer.io
     reverse_proxy https://track.customer.io {
         header_up Host cu-email.cassidyai.com
-    }
-
-    header {
-        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     }
 }
